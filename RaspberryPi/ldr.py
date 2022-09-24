@@ -6,10 +6,10 @@ GPIO.setup(8, GPIO.IN)    #8 is the pin number
 GPIO.setup(10, GPIO.OUT)  #10 is the pin number
 
 while True:
-    print(GPIO.input(11))
-    if GPIO.input(11) == 0:
+    print(GPIO.input(8))
+    if GPIO.input(8) == 0:
         print("No light")
-        GPIO.output(13, GPIO.LOW)
+        GPIO.output(10, GPIO.LOW)
     else:
         print("Light")
-        GPIO.output(13, GPIO.HIGH)
+        GPIO.output(10, GPIO.HIGH)

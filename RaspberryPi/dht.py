@@ -12,3 +12,6 @@ while True:
     else:
         print('Failed to get reading. Try again!')
     time.sleep(5)
+
+
+# CREATE TABLE dhtsensor(datetime BIGINT NOT NULL, temperature FLOAT (6,3) NOT NULL, humidity FLOAT (6,3) NOT NULL);
