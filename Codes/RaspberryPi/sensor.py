@@ -2,7 +2,7 @@ import os
 import time
 import datetime
 import glob
-import MySQLdb
+# import MySQLdb // for MySQL database
 import Adafruit_DHT
 import RPi.GPIO as GPIO
 from time import strftime
@@ -46,20 +46,21 @@ temperatures = tempRead()
 humiditys = humidityRead()
 lighting = ldrRead()
 
-sql = ("""INSERT INTO dhtsensor (datetime,temperature,humidity) VALUES (%s,%s,%s)""", (secs, temperatures, humiditys))
+# write data to MySQL database
+# sql = ("""INSERT INTO dhtsensor (datetime,temperature,humidity) VALUES (%s,%s,%s)""", (secs, temperatures, humiditys))
 
-try:
-    print("Writing to the database...")
-    cur.execute(*sql)
-    db.commit()
-    print ("Writing completed")
+# try:
+#     print("Writing to the database...")
+#     cur.execute(*sql)
+#     db.commit()
+#     print ("Writing completed")
 
-except:
-    db.rollback()
-    print ("We have a problem !!")
+# except:
+#     db.rollback()
+#     print ("We have a problem !!")
 
-cur.close()
-db.close()
+# cur.close()
+# db.close()
 
 print (secs)
 print (temperatures)
