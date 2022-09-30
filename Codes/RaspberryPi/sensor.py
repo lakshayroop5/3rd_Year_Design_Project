@@ -75,6 +75,10 @@ def mongoWrite():
 # cur.close()
 # db.close()
 
+while True:
+        mongoWrite()
+        time.sleep(20) # wait 20 seconds before repeating loop
+
 print (secs)
 print (temperatures)
 print (humiditys)
