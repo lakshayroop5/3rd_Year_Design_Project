@@ -9,6 +9,7 @@ class RoomDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentRoom = ModalRoute.of(context)!.settings.arguments as Room;
+    print(currentRoom.temperature);
     return Scaffold(
       appBar: AppBar(
         title: Text(currentRoom.name),

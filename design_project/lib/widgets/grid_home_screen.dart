@@ -3,8 +3,24 @@ import 'package:design_project/widgets/card_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class GridHomeScreen extends StatelessWidget {
+class GridHomeScreen extends StatefulWidget {
   const GridHomeScreen({super.key});
+
+  @override
+  State<GridHomeScreen> createState() => _GridHomeScreenState();
+}
+
+class _GridHomeScreenState extends State<GridHomeScreen> {
+  bool _isInit = true;
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      Provider.of<RoomList>(context).fetchRoomData();
+    }
+    _isInit = false;
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
