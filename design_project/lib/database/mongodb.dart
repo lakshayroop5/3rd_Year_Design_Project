@@ -8,7 +8,9 @@ class MongoDatabase {
   static connect() async {
     db = await Db.create(url);
     await db.open();
-    inspect(db);
+    // inspect(db);
     userCollection = db.collection(user_collection);
   }
 }
+
+// how to create function to get data
